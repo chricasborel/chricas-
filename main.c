@@ -13,7 +13,10 @@ int main(int argv, char* argc)
     void rewind (niveau);
     fgets (level, 3, niveau);
     int *pointeurSurLevel = &level;
-
+    if (*level == -1)
+    {
+        printf ("tu as dit non, tant pis pour toi\n");
+    }
     if (*level == 48)//si 0 dans le fichier
     {
         remove ("registre.i");
@@ -51,20 +54,28 @@ int main(int argv, char* argc)
         }
         j++;
         }while (j != 4);
-        fprintf (fichier, "Salut ! (c'est mon nom), tu as fait le premier pas vers un monde que peu de gens connaissent\nmaintenant que tu es la, tu ne peux plus reculer, tu dois nous aider a retablir ce monde que les virus informatiques ne cessent d'attaquer\nJe serai ici pour t'aider et te conseiller tout au long de ton periple\nPour le moment, laisse moi finir ce que je faisais\nje t'expliquerai ce que je sais au fur et a mesure\n\n");
-        fprintf (fichier, "en attendant, ouvre 'main'");
-        fclose (fichier);
-        fprintf (niveau, "1");
-        fclose (niveau);
-        char continuer[TAILLE_MAX] = "continuer";
 
-        do
-        {
-                printf ("fin du telechargement des donnees\ntu peux fermer la fenetre\nmerci\ntu peux ouvrir le dossier 'salut'\npour fermer une fenetre, ecris n'importe quoi ou utilise la croix\n");
-                scanf ("%s", &continuer);
+        fclose (niveau);
+        int continuer = 1;
+
+
+                printf ("fin du telechargement des donnees\n1.JOUER\n2.FERMER\n");
+                scanf ("%d", &continuer);
                 clear;
 
-        }while (continuer == "continuer");
+        if (continuer == 1)
+        {
+            printf ("*vous entendez une voix*\ntu as fait le bon choix mon enfant\n");
+        fprintf (fichier, "Salut ! (c'est mon nom), tu viens de rentrer dans un monde que personne ne connait\nici, c'est la guerre, tous les programmes veulent atteindre le 'main'\nmon role est de le defendre, mais un peu d'aide ne serait pas de refus\n\n");
+        fprintf (fichier, "va dans le 'main', je te rejoins");
+        fclose (fichier);
+        fprintf (niveau, "1");
+        }
+        else
+        {
+            printf ("a bientot");
+            fprintf (niveau, "-1");
+        }
     }
     }
     }
@@ -78,7 +89,7 @@ int main(int argv, char* argc)
         int i = 0;
         FILE* ennemiPremier = NULL;
         ennemiPremier = fopen ("chiffres.l", "w");
-        fprintf (ennemiPremier, "ahahah \nj'ai pris le controle du programme qui te servait d'aide\nrouvre-le pour voir\n");
+        fprintf (ennemiPremier, "hahaha \nbientot, il sera a moi ! $$\n");
         fclose (ennemiPremier);
         char continuer[TAILLE_MAX] = "";
         do
@@ -225,7 +236,7 @@ int main(int argv, char* argc)
                 FILE* registre = NULL;
                 registre = fopen ("registre.i", "a");
                 fprintf (aide, "hey !\nt'aurais pas vu des jumeaux ?\nils m'ont dit qu'ils allaient faire deviner un mot a je sais pas qui\nc'est un truc comme virus je crois\n");
-                fprintf (registre, ".b = benêt\n");
+                fprintf (registre, ".b = benÃªt\n");
                 fclose (aide);
                 fclose (registre);
             }
