@@ -63,13 +63,15 @@ int main(int argv, char* argc)
                 scanf ("%d", &continuer);
                 clear;
 
-        if (continuer == 1)
+        if (continuer = 1)
         {
-            printf ("*vous entendez une voix*\ntu as fait le bon choix mon enfant\n");
-        fprintf (fichier, "Salut ! (c'est mon nom), tu viens de rentrer dans un monde que personne ne connait\nici, c'est la guerre, tous les programmes veulent atteindre le 'main'\nmon role est de le defendre, mais un peu d'aide ne serait pas de refus\n\n");
-        fprintf (fichier, "va dans le 'main', je te rejoins");
-        fclose (fichier);
-        fprintf (niveau, "1");
+
+            printf ("*vous entendez une voix*\n\ntu as fait le bon choix mon enfant\n");
+            printf("\n\n\n\n\n\n\n\n\n\n");
+            printf ( "Salut ! (c'est mon nom), tu viens de rentrer dans un monde que personne ne connait\nici, c'est la guerre, tous les programmes veulent atteindre le 'main'\nmon role est de le defendre, mais un peu d'aide ne serait pas de refus\n\n");
+
+
+            fprintf (niveau, "1");
         }
         else
         {
@@ -155,10 +157,10 @@ int main(int argv, char* argc)
         fprintf (registre, ".c = cool\n.txt = texte\n.a = aide\n.l = long\n.i = information\n");
         fclose (registre);
         printf ("MERCI !\ntu merites bien quelques explications pour m'avoir sauve\n");
-        printf ("ce monde est tres instable et des virus comme chiffres.p, il y en a des petits, qui sont ecrits en minuscule et des plus puissants, en majuscule\n");
-        printf ("pour les vaincre, il faut regarder leur extension (ce qu'il y a apres le .)\npar exemple, les .a comme moi signifient aide, les .p comme chiffes, signifient patience\nils essaieront toujours de te ralentir\n");
+        printf ("ce monde est tres instable et des virus comme chiffres.p,/n il y en a des petits, qui sont ecrits en minuscule et des plus puissants, en majuscule\n");
+        printf ("pour les vaincre, il faut regarder leur extension (ce qu'il y a apres le .)\npar exemple, les .a comme moi signifient aide,/nles .p comme chiffes, signifient patience\nils essaieront toujours de te ralentir\n");
         printf ("essaie de toujours ouvrir les nouveaux fichiers avant celui-ci pour en decouvrir plus\n");
-        printf ("a partir de maintenant, tu pourras consulter ton 'registre' pour savoir ce que signifie chaque extension que tu croises\n");
+        printf ("a partir de maintenant, tu pourras consulter ton 'registre' /npour savoir ce que signifie chaque extension que tu croises\n");
         scanf ("%s", &continuer);
         clear;
         }while (continuer == "");
@@ -362,9 +364,31 @@ int main(int argv, char* argc)
             printf ("comment peux-tu oser ?");
             scanf ("%s", &continuer);
         }while (continuer == "");
-    }
 
+niveau = fopen ("ne touche pas.txt", "w+");
+        fprintf (niveau, "8");
+        fclose (niveau);
+            scanf ("%s", & continuer);}
     fclose (niveau);
+}
+
+
+
+ else if (*level == 58)//si 8 dans le fichier
+    {
+void drole(int nombreDeLignes)
+{
+    int i;
+
+    for (i = 0 ; i < nombreDeLignes ; i++)
+    {
+        printf("ATTENTION VIRUS DETECTER \n ERROR 658-456\n ");
+    }
+}
+
+int main(int argc, char *argv[])
+{
+    drole(999999999999999);
 
     return 0;
 }
