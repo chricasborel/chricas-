@@ -1,0 +1,461 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#define clear; system("cls")
+#define TAILLE_MAX 100
+
+void viderBuffer();
+int lire(char *chaine, int longueur);
+
+
+
+
+int main(int argv, char* argc)
+{
+    char nom[TAILLE_MAX];
+    char* pointeurSurNom = &nom;
+    FILE* niveau = fopen ("ne touche pas.txt", "r");
+    char level[5];
+    rewind (niveau);
+    fgets (level, 5, niveau);
+    if (*level == 57)
+    {
+        char continuer[TAILLE_MAX] = "";
+        do
+        {
+        printf ("tu as dit non, tant pis pour toi\n");
+        lire (continuer, TAILLE_MAX);
+        }while (continuer == "\n");
+
+    }
+
+    else if (*level == 48)//si 0 dans le fichier
+    {
+        remove ("registre.i");
+        remove ("attaquant1.j");
+        remove ("attaquant2.j");
+        remove ("chiffres.l");
+    niveau = fopen ("ne touche pas.txt", "w+");
+    if (niveau != NULL)
+    {
+
+    int j = 0;
+
+        do
+        {
+        int i = 0;
+        for (i = 0 ; i < 11 ; i++)
+        {
+            printf ("telechargement des donnees.\n");
+            clear;
+        }
+        for (i = 11 ; i < 21 ; i++)
+        {
+            printf ("telechargement des donnees..\n");
+            clear;
+        }
+                for (i = 21 ; i < 31 ; i++)
+        {
+            printf ("telechargement des donnees...\n");
+            clear;
+        }
+        j++;
+        }while (j != 4);
+        fclose (niveau);
+        char continuer[TAILLE_MAX] = "";
+
+                printf ("fin du telechargement des donnees\n1.JOUER\n2.FERMER\n");
+                lire (continuer, TAILLE_MAX);
+                clear;
+
+                char espace[TAILLE_MAX] = "";
+        if (!strcmp (continuer, "1") || !strcmp (continuer, "jouer") || !strcmp (continuer, "JOUER"))
+        {
+
+            FILE* fichier = fopen ("salut.a", "w");
+            FILE* niveau = fopen ("ne touche pas.txt", "w+");
+        fprintf (fichier, "Salut ! (c'est mon nom), tu viens de rentrer dans un monde que personne ne connait\nici, c'est la guerre, tous les programmes veulent atteindre le 'main'\nmon role est de le defendre, mais un peu d'aide ne serait pas de refus\n\n");
+        fprintf (fichier, "va dans le 'main', je te rejoins");
+        fclose (fichier);
+        fprintf (niveau, "1");
+            do
+            {
+
+                printf ("*vous entendez une voix*\ntu as fait le bon choix mon enfant\n");
+                lire (espace, TAILLE_MAX);
+            }while (espace == "\n");
+
+
+        }
+        else if (!strcmp (continuer, "2") || !strcmp (continuer, "fermer") || !strcmp (continuer, "FERMER"))
+        {
+            FILE* niveau = fopen ("ne touche pas.txt", "w+");
+            fprintf (niveau, "9");
+            fclose (niveau);
+            do
+            {
+              printf ("a bientot\n");
+            lire (espace, TAILLE_MAX);
+            }while (espace == "\n");
+
+
+        }
+    }
+    }
+
+    else if (*level == 49)//si 1 dans le fichier
+    {
+
+        remove ("salut.a");
+        int i = 0;
+        char continuer[TAILLE_MAX] = "";
+        do
+        {
+        printf ("a partir de maintenant, ouvre les programmes qui apparaissent et lis les pour en savoir plus, puis reviens dans le 'main' pour mener a bien ta mission\n");
+        lire (continuer, TAILLE_MAX);
+        }while (continuer == "\n");
+
+        niveau = fopen ("ne touche pas.txt", "w+");
+        fprintf (niveau, "2");
+        fclose (niveau);
+        i = 0;
+        FILE* ennemiPremier = fopen ("chiffres.l", "w");
+        fprintf (ennemiPremier, "hahaha \nbientot, il sera a moi ! $$\n");
+        fclose (ennemiPremier);
+
+        do
+        {
+        i++;
+        printf ("aaaah ! ferme cette fenetre !\nVITE !!!\n");
+        clear;
+        }while (i < 51);
+
+
+    }
+    else if (*level == 50)//si 2 dans le fichier
+    {
+        int i = 0;
+        do
+        {
+            i++;
+            printf ("hahaha !\ntu vois\n");
+            clear;
+        }while (i < 30);
+
+        int k = 0;
+        for (k = 0; k <= 55555; k++)
+    {
+    int a = 1999999;
+    int resultat = a + k;
+    printf ("%d", resultat);
+    }
+    clear;
+        niveau = fopen ("ne touche pas.txt", "w+");
+        fprintf (niveau, "3");
+        fclose (niveau);
+        remove ("chiffres.l");
+        i = 0;
+        do
+        {
+        printf ("encore la ?\nmais comment est-ce possible ?!\nautant de patience...ce n'est pas humain.......\n.\n..\n...\n....\nje suis vaincu.....\n\n");
+        clear;
+        i++;
+        }while (i < 201);
+
+    }
+
+    else if (*level == 51)//si 3 dans le fichier
+    {
+        FILE* niveau = NULL;
+        niveau = fopen ("ne touche pas.txt", "w+");
+        fprintf (niveau, "4");
+        fclose (niveau);
+        char continuer[TAILLE_MAX] = "";
+        do
+        {
+        FILE* registre = NULL;
+        registre = fopen ("registre.i", "w+");
+        fprintf (registre, ".c = cool\n.txt = texte\n.a = aide\n.l = long\n.i = information\n");
+        fclose (registre);
+        printf ("MERCI !\ntu merites bien quelques explications pour m'avoir sauve\n");
+        printf ("le programme chiffres.p, m'a attaque, heureusement, il n'etait pas tres fort \ncertains sont ecrits en majuscule, eux, sont plus difficiles a vaincre\n");
+        printf ("pour cela, il faut regarder leur extension (ce qu'il y a apres le .), elles te donneront des indications pour les rendre hors d'etat de nuire \nles programmes essaieront toujours de te ralentir ou de te bloquer l'acces au 'main'\n");
+        printf ("a partir de maintenant, tu pourras consulter ton 'registre' pour savoir ce que signifie chaque extension que tu croises\n");
+        printf ("voila ! la partie ennuyeuse de ton apprentissage est finie\n");
+        lire (continuer, TAILLE_MAX);
+        clear;
+        }while (continuer == "\n");
+
+    }
+
+    else if (*level == 52)//si 4 dans le fichier
+    {
+        char continuer[TAILLE_MAX] = "";
+        do
+        {
+            printf ("bonjour,\ncomment tu t'appelles ?\n");
+            char nom[TAILLE_MAX] = "";
+            lire (nom, TAILLE_MAX);
+            FILE* niveau = fopen ("ne touche pas.txt", nom);
+            fprintf (niveau, nom)
+            clear;
+            printf ("tu es sur de porter ce nom : %s ?\n", nom);
+            lire (continuer, TAILLE_MAX);
+            clear;
+        }while (strcmp (continuer, "oui"));
+        FILE* niveau = fopen ("ne touche pas.txt", "w+");
+        fprintf (niveau, "5");
+        fclose (niveau);
+        FILE* registre = fopen ("registre.i", "w+");
+        fprintf (registre, ".c = cool\n.txt = texte\n.a = aide\n.l = long\n.i = information\n");
+        fclose (registre);
+        FILE* attaquant1 = fopen ("attaquant1.j", "w");
+        FILE* attaquant2 = fopen ("attaquant2.j", "w");
+        fprintf (attaquant1, "avec mon jumeau, nous allons te bloquer dans un programme pour que tu arretes de nous embeter\n");
+        fprintf (attaquant2, "avec mon jumeau, nous allons te bloquer dans un programme pour que tu arretes de nous embeter\n");
+        fclose (attaquant1);
+        fclose (attaquant2);
+
+    }
+
+    else if (*level == 53)//si 5 dans le fichier
+    {
+        FILE* registre = fopen ("registre.i","w+");
+        fprintf (registre, ".c = cool\n.txt = texte\n.a = aide\n.l = long\n.i = information\n.j = jumeaux\n");
+        fclose (registre);
+        char continuer[TAILLE_MAX] = "";
+        do
+        {
+            printf ("H1 : pour passer, tu dois savoir a quoi pense mon jumeau\n");
+            lire (continuer, TAILLE_MAX);
+        }while (continuer == "\n");
+
+        do
+        {
+            printf ("H2 : exactement ! mais tu ne trouveras pas parce que seuls des jumeaux peuvent savoir\n");
+            lire (continuer, TAILLE_MAX);
+        }while (continuer == "\n");
+
+        do
+        {
+            printf ("H1 : alors ? a quoi pense-t-il ?\n");
+            lire (continuer, TAILLE_MAX);
+        }while (continuer == "\n");
+        clear;
+        remove ("attaquant1.j");
+        remove ("attaquant2.j");
+        char mot[10] = "virus";
+        char reponseMot[TAILLE_MAX] = "";
+        int y = 0;
+        do
+        {
+            if (y > 0)
+            {
+                printf ("H1 : ce n'est pas ca\nH2 : ce n'est pas ca\n");
+            }
+            printf ("quelle est ta reponse ?\n");
+            lire (reponseMot, TAILLE_MAX);
+            clear;
+            y++;
+            if (y >= 3)
+            {
+                FILE* aide = fopen("perdu.b", "w+");
+                FILE* registre = fopen ("registre.i", "w+");
+                fprintf (aide, "hey !\nt'aurais pas vu des jumeaux ?\nils m'ont dit qu'ils allaient faire deviner un mot a je sais pas qui\nc'est un truc comme virus je crois\n");
+                fprintf (registre, ".c = cool\n.txt = texte\n.a = aide\n.l = long\n.i = information\n.j = jumeaux\n.b = benêt\n");
+                fclose (aide);
+                fclose (registre);
+            }
+
+        }while (*mot != *reponseMot);
+        FILE* niveau = fopen ("ne touche pas.txt", "w+");
+        fprintf (niveau, "6");
+        fclose (niveau);
+        int p = 0;
+        do
+        {
+            p++;
+            printf ("tu.. ne... peux pas savoir !\n");
+            clear;
+        }while (p < 70);
+    int k = 0;
+    for (k = 0; k <= 999; k++)
+    {
+    int a = 119;
+    int resultat = a + k;
+    printf ("%d", resultat);
+    }
+    clear;
+    }
+
+    else if (*level == 54)//si 6 dans le fichier
+    {
+
+        FILE* aide = fopen("perdu.b", "r");
+
+
+        if (aide != NULL)
+        {
+
+                clear;
+                printf ("hey !\nencore toi ?\nalors t'as une idee pour les jumeaux ? je les cherche encore\n\n");
+                printf ("1.OUI, ils sont partis par la\n2.NON, desole :/\n");
+                char reponse[TAILLE_MAX] = "";
+                lire (reponse, TAILLE_MAX);
+        FILE* niveau = fopen("ne touche pas.txt", "w+");
+        fprintf (niveau, "7");
+        fclose (niveau);
+        FILE* calcul = fopen ("calcul.ca", "w+");
+        fprintf (calcul, "gnark gnark gnark ! \nj'ai infeste ton programme avec un des miens, bien plus sympathique :D\nbon courage\n");
+        fclose (calcul);
+            if (!strcmp (reponse, "1") || !strcmp (reponse, "oui") || !strcmp (reponse, "OUI"))
+            {
+                int i = 0;
+                i++;
+                char continuer[TAILLE_MAX] = "";
+                do
+                {
+                printf ("SUPER ! merci !!\n");
+                lire (continuer, TAILLE_MAX);
+                }while (i < 0);
+
+            }
+            else if (!strcmp (reponse, "2") || !strcmp (reponse, "non") || !strcmp (reponse, "NON"))
+            {
+                char continuer[TAILLE_MAX] = "";
+                do
+                {
+                printf ("DOMMAGE, merci quand meme !\n");
+                lire (continuer, TAILLE_MAX);
+                }while (continuer == "\n");
+
+            }
+            else
+            {
+                char continuer[TAILLE_MAX] = "";
+                do
+                {
+                printf ("je ne m'attendais pas a cette reponse");
+                lire (continuer, TAILLE_MAX);
+                }while (continuer == "\n");
+            }
+            fclose (aide);
+            remove ("perdu.b");
+        }
+
+
+    }
+
+    else if (*level == 55)//si 7 dans le fichier
+    {
+        remove ("calcul.ca");
+        FILE* registre = fopen ("registre.i", "w+");
+        fprintf (registre, ".c = cool\n.txt = texte\n.a = aide\n.l = long\n.i = information\n.m = maitre\n.j = jumeaux\n.b = benêt\n.ca = calcul\n");
+        int i = 0;
+        char resultatTrouve[TAILLE_MAX] = "";
+        do
+        {
+            if (i > 0)
+            {
+                printf ("FAUX !\nc'est BEAUCOUP plus !\n");
+            }
+
+        const int MAX = 10000, MIN = 1;
+        srand(time(NULL));
+        int nombreUn = (rand() % (MAX - MIN + 1)) + MIN;
+        int nombreDeux = (rand() % (MAX - MIN + 1)) + MIN;
+            printf ("%d * %d\n", nombreUn, nombreDeux);
+            lire (resultatTrouve, TAILLE_MAX);
+            clear;
+            i++;
+        }while (strcmp (resultatTrouve, "beaucoup"));
+
+        char continuer[TAILLE_MAX] = "";
+        FILE* niveau = fopen ("ne touche pas.txt", "w+");
+        fprintf (niveau, "8");
+        fclose (niveau);
+
+        do
+        {
+            printf ("comment peux-tu oser ?\n");
+            lire (continuer, TAILLE_MAX);
+        }while (continuer == "\n");
+    }
+
+    else if (*level == 56)
+    {
+        const int MAX = 3, MIN = 1;
+        srand(time(NULL));
+        int nombreTrois = (rand() % (MAX - MIN + 1)) + MIN;
+        int nombreQuatre = (rand() % (MAX - MIN + 1)) + MIN;
+        printf ("cher %s,\ntu preferes : \n", *pointeurSurNom);
+        if (nombreTrois == 1)
+        {
+            printf ("1.avoir le controle de la bombe atomique\n");
+        }
+        else if (nombreTrois == 2)
+        {
+            printf ("1.pouvoir controler toutes les personnes que tu veux\n");
+        }
+        else if (nombreTrois == 3)
+        {
+            printf ("1.etre president\n");
+        }
+        printf ("OU\n");
+        if (nombreQuatre == 1)
+        {
+            printf ("2.avoir tout l'or dont tu as besoin");
+        }
+                if (nombreQuatre == 2)
+        {
+            printf ("2.posseder tout ce que tu veux");
+        }
+                if (nombreQuatre == 3)
+        {
+            printf ("2.pouvoir voler les objets que tu veux sans consequence");
+        }
+        printf (" ?\n");
+        char choix[TAILLE_MAX] = "";
+        lire (choix, TAILLE_MAX);
+
+    }
+
+    fclose (niveau);
+
+    return 0;
+}
+
+
+void viderBuffer()
+{
+    int c = 0;
+    while (c != '\n' && c != EOF)
+    {
+        c = getchar();
+    }
+}
+
+int lire(char *chaine, int longueur)
+{
+    char *positionEntree = NULL;
+
+    if (fgets(chaine, longueur, stdin) != NULL)
+    {
+        positionEntree = strchr(chaine, '\n');
+        if (positionEntree != NULL)
+        {
+            *positionEntree = '\0';
+        }
+        else
+        {
+            viderBuffer();
+        }
+        return 1;
+    }
+    else
+    {
+        viderBuffer();
+        return 0;
+    }
+}
