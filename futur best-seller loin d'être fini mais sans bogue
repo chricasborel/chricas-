@@ -197,11 +197,12 @@ int main(int argv, char* argc)
             printf ("bonjour,\ncomment tu t'appelles ?\n");
             char nom[TAILLE_MAX] = "";
             lire (nom, TAILLE_MAX);
-            FILE* niveau = fopen ("ne touche pas.txt", nom);
-            fprintf (niveau, nom)
+            FILE* niveau = fopen ("ne touche pas.txt", "a");
             clear;
             printf ("tu es sur de porter ce nom : %s ?\n", nom);
             lire (continuer, TAILLE_MAX);
+            fprintf (niveau, nom);
+            fclose (niveau);
             clear;
         }while (strcmp (continuer, "oui"));
         FILE* niveau = fopen ("ne touche pas.txt", "w+");
